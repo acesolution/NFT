@@ -45,282 +45,316 @@
     </div>
 
     <script>
-const otherStyles = {
-  bottom: {
-    width: '270px',
-    height: '359px',
-    top: '480px',
-    'z-index': '100',
-  },
-  middle: {
-    width: '340px',
-    height: '452px',
-    top: '387px',
-    'z-index': '1000',
-  },
-  top: {
-    width: '377px',
-    height: '501px',
-    top: '340px',
-    'z-index': '5000',
+      const otherStyles = {
+        bottom: {
+          width: '270px',
+          height: '359px',
+          top: '480px',
+          'z-index': '100',
+        },
+        middle: {
+          width: '340px',
+          height: '452px',
+          top: '387px',
+          'z-index': '1000',
+        },
+        top: {
+          width: '377px',
+          height: '501px',
+          top: '340px',
+          'z-index': '5000',
 
-  }
-}
-
-
-const styles = {
-  group: {
-    left: '1067px',
-  },
-  footballerwrapper: {
-    left: '824px',
-  },
-  overlapgroup: {
-    left: '530px',
-  },
-  skierwrapper: {
-    left: '274px',
-  },
-  tanisplayerwrapper: {
-    left: '81px',
-  },
-};
-
-const divSizes = {
-  group: {
-    divWidth: '270px',
-    divHeight: '359px',
-    imageWidth: '136px',
-    imageHeight: '312px',
-    imageLeft: '67px',
-  },
-  footballerwrapper: {
-    divWidth: '340px',
-    divHeight: '452px',
-    imageWidth: '146px',
-    imageHeight: '378px',
-    imageLeft: '95px',
-  },
-  overlapgroup: {
-    divWidth: '377px',
-    divHeight: '501px',
-    imageWidth: '210px',
-    imageHeight: '422px',
-    imageLeft: '85px',
-  },
-  skierwrapper: {
-    divWidth: '470px',
-    divHeight: '452px',
-    imageWidth: '191px',
-    imageHeight: '392px',
-    imageLeft: '74px',
-  },
-  tanisplayerwrapper: {
-    divWidth: '270px',
-    divHeight: '359px',
-    imageWidth: '205px',
-    imageHeight: '301px',
-    imageLeft: '32px',
-  },
-};
-
-const textValues = {
-  group: {
-    title: "Herbert",
-    desc: "Herbert, also known as the Hiker, a renowned warrior from Germany, is a living testament to the power of resilience and determination. Despite the loss of one leg in a fierce battle with a grizzly bear, Herbert has emerged as a beacon of inspiration in the world of fighters and adventurers. Crossing the alps, climbing mount everest or fighting rivals, Herbert is demanding challenges wherever he can. Herbert embodies the essence of triumph over adversity, making him a hero whose tale will be remembered for generations to come and who spreads fear among his enemies."
-  },
-  footballerwrapper: {
-    title: "Felipe - Football Player",
-    desc: "Felipe, born and raised in the vibrant streets of Brazil, became a both a world class football player and a furious fighter who is well known in the gritty favelas of brazil. His unique skillset, his relentless power and his artsy touch make people wonder if his parents involve both Ronaldo and Myke Tyson. With his agility and a keen eye for goal, he dazzled audiences on the football field, becoming a celebrated name in Brazilian soccer. Off the pitch, in the heart of the favelas, Felipe's reputation as a fearless fighter spread like wildfire. His unparalleled determination and raw talent earned him respect and fear in both worlds.Fun Fact: Despite his fierce reputation in the favelas and on the football field, Felipe is an avid animal lover and spends his free time volunteering at local animal shelters in Brazil.",
-  },
-  overlapgroup: {
-    title: "Granny Mei - Crazy Grandma",
-    desc: "Meet Granny Mei, the vivacious and eccentric old kung fu master whose age is just a number in her world of martial arts mastery. Granny Mei may appear to be a sweet old lady knitting in her rocking chair, but when danger calls, she transforms into a vicious fighter with set of kicks and punches, leaving her foes bewildered and defeated. Granny Mei's fighting style is as unconventional as it is effective, combining traditional fighting mechanics with unexpected moves and unorthodox techniques that catch her opponents off guard.",
-  },
-  skierwrapper: {
-    title: "Skier: Sepp",
-    desc: "Sepp grew up in a cozy and isolated cabin perched high snow-covered peaks of Mount Blizzardfury, where he was raised and teached by his eccentric and fiercely independent grandfather, Franz, who was a master of the goat inspired fighting technique, Skiing and survival tactics. Under his tutelage, Sepp learned not only the art of skiing but also the ways of fighting. Growing a man, Sepp quickly became a renowned survivalist, an expert skier, and a masterful fighter who once even tamed a wild yeti with nothing but his hands.",
-  },
-  tanisplayerwrapper: {
-    title: "Tatatanka - Tennis Girl:",
-    desc: "Tatatanka, is not your average athlete on and off the court. Growing up in a japanse orphanage, where she had to learn how to gain respect since her very early childhood. She is a force of nature, a whirlwind of energy and determination, leaving spectators in awe with her quick attacks, her superhuman skills and relentless power. With her lightning-fast footwork, Tatatanka is a true icon in the world of tennis, but also a feared champion in the world of fighting.",
-  },
-};
-
-
-function updateTextContent() {
-  const sliderDivs = document.querySelectorAll('.slider-div');
-
-  const thirdChild = sliderDivs[2]; // Access the third child element
-
-
-  if (thirdChild) {
-    const className = thirdChild.classList[0];
-    const modifiedClassName = className.replace(/-/g, '');
-    // Check if the className exists in textValues
-    if (textValues[modifiedClassName]) {
-      const { title, desc } = textValues[modifiedClassName];
-      const pTag = document.querySelector('.granny-mei-meet'); // Assuming the p tag has this class
-      console.log(pTag)
-      if (pTag) {
-        pTag.innerHTML = `
-          <span class="span">${title}<br /></span>
-          <span class="text-wrapper-2"><br />${desc}<br /></span>
-        `;
+        }
       }
-    }
-  }
 
-}
+      const styles = {
+        group: {
+          left: '1067px',
+        },
+        footballerwrapper: {
+          left: '824px',
+        },
+        overlapgroup: {
+          left: '530px',
+        },
+        skierwrapper: {
+          left: '274px',
+        },
+        tanisplayerwrapper: {
+          left: '81px',
+        },
+      };
+
+      const divSizes = {
+        group: {
+          divWidth: '270px',
+          divHeight: '359px',
+          imageWidth: '136px',
+          imageHeight: '312px',
+          imageLeft: '67px',
+        },
+        footballerwrapper: {
+          divWidth: '340px',
+          divHeight: '452px',
+          imageWidth: '146px',
+          imageHeight: '378px',
+          imageLeft: '95px',
+        },
+        overlapgroup: {
+          divWidth: '377px',
+          divHeight: '501px',
+          imageWidth: '210px',
+          imageHeight: '422px',
+          imageLeft: '85px',
+        },
+        skierwrapper: {
+          divWidth: '470px',
+          divHeight: '452px',
+          imageWidth: '191px',
+          imageHeight: '392px',
+          imageLeft: '74px',
+        },
+        tanisplayerwrapper: {
+          divWidth: '270px',
+          divHeight: '359px',
+          imageWidth: '205px',
+          imageHeight: '301px',
+          imageLeft: '32px',
+        },
+      };
+
+      const textValues = {
+        group: {
+          title: "Herbert",
+          desc: "Herbert, also known as the Hiker, a renowned warrior from Germany, is a living testament to the power of resilience and determination. Despite the loss of one leg in a fierce battle with a grizzly bear, Herbert has emerged as a beacon of inspiration in the world of fighters and adventurers. Crossing the alps, climbing mount everest or fighting rivals, Herbert is demanding challenges wherever he can. Herbert embodies the essence of triumph over adversity, making him a hero whose tale will be remembered for generations to come and who spreads fear among his enemies."
+        },
+        footballerwrapper: {
+          title: "Felipe - Football Player",
+          desc: "Felipe, born and raised in the vibrant streets of Brazil, became a both a world class football player and a furious fighter who is well known in the gritty favelas of brazil. His unique skillset, his relentless power and his artsy touch make people wonder if his parents involve both Ronaldo and Myke Tyson. With his agility and a keen eye for goal, he dazzled audiences on the football field, becoming a celebrated name in Brazilian soccer. Off the pitch, in the heart of the favelas, Felipe's reputation as a fearless fighter spread like wildfire. His unparalleled determination and raw talent earned him respect and fear in both worlds.Fun Fact: Despite his fierce reputation in the favelas and on the football field, Felipe is an avid animal lover and spends his free time volunteering at local animal shelters in Brazil.",
+        },
+        overlapgroup: {
+          title: "Granny Mei - Crazy Grandma",
+          desc: "Meet Granny Mei, the vivacious and eccentric old kung fu master whose age is just a number in her world of martial arts mastery. Granny Mei may appear to be a sweet old lady knitting in her rocking chair, but when danger calls, she transforms into a vicious fighter with set of kicks and punches, leaving her foes bewildered and defeated. Granny Mei's fighting style is as unconventional as it is effective, combining traditional fighting mechanics with unexpected moves and unorthodox techniques that catch her opponents off guard.",
+        },
+        skierwrapper: {
+          title: "Skier: Sepp",
+          desc: "Sepp grew up in a cozy and isolated cabin perched high snow-covered peaks of Mount Blizzardfury, where he was raised and teached by his eccentric and fiercely independent grandfather, Franz, who was a master of the goat inspired fighting technique, Skiing and survival tactics. Under his tutelage, Sepp learned not only the art of skiing but also the ways of fighting. Growing a man, Sepp quickly became a renowned survivalist, an expert skier, and a masterful fighter who once even tamed a wild yeti with nothing but his hands.",
+        },
+        tanisplayerwrapper: {
+          title: "Tatatanka - Tennis Girl:",
+          desc: "Tatatanka, is not your average athlete on and off the court. Growing up in a japanse orphanage, where she had to learn how to gain respect since her very early childhood. She is a force of nature, a whirlwind of energy and determination, leaving spectators in awe with her quick attacks, her superhuman skills and relentless power. With her lightning-fast footwork, Tatatanka is a true icon in the world of tennis, but also a feared champion in the world of fighting.",
+        },
+      };
+
+      function updateTextContent() {
+        const sliderDivs = document.querySelectorAll('.slider-div');
+
+        const thirdChild = sliderDivs[2]; // Access the third child element
 
 
+        if (thirdChild) {
+          const className = thirdChild.classList[0];
+          const modifiedClassName = className.replace(/-/g, '');
+          // Check if the className exists in textValues
+          if (textValues[modifiedClassName]) {
+            const { title, desc } = textValues[modifiedClassName];
+            const pTag = document.querySelector('.granny-mei-meet'); // Assuming the p tag has this class
+            console.log(pTag)
+            if (pTag) {
+              pTag.innerHTML = `
+                <span class="span">${title}<br /></span>
+                <span class="text-wrapper-2"><br />${desc}<br /></span>
+              `;
+            }
+          }
+        }
 
-function setDynamicImageSize() {
-  const divs = document.querySelectorAll('.slider-div');
+      }
 
-  divs.forEach((div) => {
-    const className = div.classList[0];
-    const modifiedClassName = className.replace(/-/g, '');
-    console.log(modifiedClassName);
+      function setDynamicImageSize() {
+        const divs = document.querySelectorAll('.slider-div');
 
-    const container = divSizes[modifiedClassName];
-    console.log(container);
-    const containerWidth = parseFloat(container.divWidth);
-    const containerHeight = parseFloat(container.divHeight);
-    const imageWidth = parseFloat(container.imageWidth);
-    const imageHeight = parseFloat(container.imageHeight);
-    const imageLeft = parseFloat(container.imageLeft);
+        divs.forEach((div) => {
+          const className = div.classList[0];
+          const modifiedClassName = className.replace(/-/g, '');
+          console.log(modifiedClassName);
 
-    const newDivWidth = div.getBoundingClientRect().width;
+          const container = divSizes[modifiedClassName];
+          console.log(container);
+          const containerWidth = parseFloat(container.divWidth);
+          const containerHeight = parseFloat(container.divHeight);
+          const imageWidth = parseFloat(container.imageWidth);
+          const imageHeight = parseFloat(container.imageHeight);
+          const imageLeft = parseFloat(container.imageLeft);
 
-    const aspectRatioWidth = newDivWidth / containerWidth;
-    let newImageWidth = imageWidth * aspectRatioWidth;
-    let newImageLeft = aspectRatioWidth * imageLeft;
-    console.log("image left",newImageLeft);
+          const newDivWidth = div.getBoundingClientRect().width;
 
-    const newDivHeight = div.getBoundingClientRect().height;
-    const aspectRatioHeight = newDivHeight / containerHeight;
-    const newImageHeight = imageHeight * aspectRatioHeight;
-    if (modifiedClassName === 'skierwrapper') {
-    console.log('New Image Width:', newImageWidth);
-      newImageWidth = newImageWidth + 52;
-    }
-    const image = div.querySelector('img');
-    image.style.width = `${newImageWidth}px`;
-    image.style.height = `${newImageHeight}px`;
-    image.style.left = `${newImageLeft}px`;
+          const aspectRatioWidth = newDivWidth / containerWidth;
+          let newImageWidth = imageWidth * aspectRatioWidth;
+          let newImageLeft = aspectRatioWidth * imageLeft;
+          console.log("image left",newImageLeft);
+
+          const newDivHeight = div.getBoundingClientRect().height;
+          const aspectRatioHeight = newDivHeight / containerHeight;
+          const newImageHeight = imageHeight * aspectRatioHeight;
+          if (modifiedClassName === 'skierwrapper') {
+          console.log('New Image Width:', newImageWidth);
+            newImageWidth = newImageWidth + 52;
+          }
+          const image = div.querySelector('img');
+          image.style.width = `${newImageWidth}px`;
+          image.style.height = `${newImageHeight}px`;
+          image.style.left = `${newImageLeft}px`;
+        });
+        
+      }
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+  const sliderDivs = document.querySelectorAll('.slider-div');
+  let isMouseDown = false;
+  let startX = 0;
+
+  sliderDivs.forEach((sliderDiv) => {
+    sliderDiv.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      startX = e.pageX;
+      sliderDiv.classList.add('active');
+    });
+
+    sliderDiv.addEventListener('mouseup', () => {
+      isMouseDown = false;
+      sliderDiv.classList.remove('active');
+    });
+
+    sliderDiv.addEventListener('mouseleave', () => {
+      isMouseDown = false;
+      sliderDiv.classList.remove('active');
+    });
+
+    sliderDiv.addEventListener('mousemove', (e) => {
+      if (!isMouseDown) return;
+      e.preventDefault();
+      const x = e.pageX;
+      const diffX = x - startX;
+
+      if (diffX > 50) {
+        moveRight(); // Adjust the threshold (50) as needed
+        startX = x;
+      } else if (diffX < -50) {
+        moveLeft(); // Adjust the threshold (-50) as needed
+        startX = x;
+      }
+    });
   });
-  
-}
+});
 
 
 
+      function rearrangeStyles(stylesObj) {
+        const keys = Object.keys(stylesObj);
+        const lastKey = keys[keys.length - 1];
+        const lastStyle = stylesObj[lastKey];
 
-function rearrangeStyles(stylesObj) {
-  const keys = Object.keys(stylesObj);
-  const lastKey = keys[keys.length - 1];
-  const lastStyle = stylesObj[lastKey];
+        for (let i = keys.length - 1; i > 0; i--) {
+          stylesObj[keys[i]] = stylesObj[keys[i - 1]];
+        }
 
-  for (let i = keys.length - 1; i > 0; i--) {
-    stylesObj[keys[i]] = stylesObj[keys[i - 1]];
-  }
+        stylesObj[keys[0]] = lastStyle;
+      }
+      let tempVal = 0;
 
-  stylesObj[keys[0]] = lastStyle;
-}
-let tempVal = 0;
+      function applyStylesToElements(stylesObj, otherStylesObj) {
 
-function applyStylesToElements(stylesObj, otherStylesObj) {
+        const slider = document.getElementById("slider");
+        const elements = slider.querySelectorAll(".slider-div");
+        if(tempVal>1){
+          rearrangeStyles(stylesObj);
+          console.log(stylesObj)
+        }
+        
+        elements.forEach((element, index) => {
 
-  const slider = document.getElementById("slider");
-  const elements = slider.querySelectorAll(".slider-div");
-  if(tempVal>1){
-    rearrangeStyles(stylesObj);
-    console.log(stylesObj)
-  }
-  
-  elements.forEach((element, index) => {
+          const styleKeys = Object.keys(stylesObj);
+          const style = stylesObj[styleKeys[index % styleKeys.length]];
 
-    const styleKeys = Object.keys(stylesObj);
-    const style = stylesObj[styleKeys[index % styleKeys.length]];
+          if (style) {
+            Object.keys(style).forEach((key) => {
+              element.style[key] = style[key];
+            });
+          }
+        
+          let otherStyle;
+          if (index === 0 || index === 4) {
+            otherStyle = otherStylesObj['bottom'];
+          } else if (index === 1 || index === 3) {
+            otherStyle = otherStylesObj['middle'];
+          } else if (index === 2) {
+            otherStyle = otherStylesObj['top'];
+          }
+          
+          if (otherStyle) {
+            Object.keys(otherStyle).forEach((key) => {
+              element.style[key] = otherStyle[key];
+            });
+          }
+        });
+        if (elements[2]) {
+          // Get the image element within the slider-div at index 2
+          const image = elements[2].querySelector('img');
 
-    if (style) {
-      Object.keys(style).forEach((key) => {
-        element.style[key] = style[key];
-      });
-    }
-  
-    let otherStyle;
-    if (index === 0 || index === 4) {
-      otherStyle = otherStylesObj['bottom'];
-    } else if (index === 1 || index === 3) {
-      otherStyle = otherStylesObj['middle'];
-    } else if (index === 2) {
-      otherStyle = otherStylesObj['top'];
-    }
-    
-    if (otherStyle) {
-      Object.keys(otherStyle).forEach((key) => {
-        element.style[key] = otherStyle[key];
-      });
-    }
-  });
-  if (elements[2]) {
-    // Get the image element within the slider-div at index 2
-    const image = elements[2].querySelector('img');
+          // Change the left property of the image
+          if (image) {
+            image.style.left = '75px'; // Set your desired value for the left property
+          }
+        }
+      }
 
-    // Change the left property of the image
-    if (image) {
-      image.style.left = '75px'; // Set your desired value for the left property
-    }
-  }
-}
+      function moveLeft() {
+        const slider = document.getElementById("slider");
+        const firstElement = slider.firstElementChild;
+        const secondElement = firstElement.nextElementSibling;
+        
+        if (tempVal === 0) {
+          slider.removeChild(secondElement);
+          slider.appendChild(secondElement);
+          tempVal = tempVal + 1;
+          applyStylesToElements(styles, otherStyles);
+          setDynamicImageSize();
+          updateTextContent();
+        } else {
+          slider.removeChild(firstElement);
+          slider.appendChild(firstElement);
+          applyStylesToElements(styles, otherStyles);
+          setDynamicImageSize();
+          updateTextContent();
 
-function moveLeft() {
-  const slider = document.getElementById("slider");
-  const firstElement = slider.firstElementChild;
-  const secondElement = firstElement.nextElementSibling;
-  
-  if (tempVal === 0) {
-    slider.removeChild(secondElement);
-    slider.appendChild(secondElement);
-    tempVal = tempVal + 1;
-    applyStylesToElements(styles, otherStyles);
-    setDynamicImageSize();
-    updateTextContent();
-  } else {
-    slider.removeChild(firstElement);
-    slider.appendChild(firstElement);
-    applyStylesToElements(styles, otherStyles);
-    setDynamicImageSize();
-    updateTextContent();
+        }
+      }
 
-  }
-}
+      function moveRight() {
+        const slider = document.getElementById("slider");
+        const lastElement = slider.lastElementChild;
+        const secondLastElement = lastElement.previousElementSibling;
+        if (tempVal == 0) {
+          slider.removeChild(secondLastElement);
+          slider.insertBefore(secondLastElement, slider.firstElementChild);
+          tempVal = tempVal + 1;
+          applyStylesToElements(styles, otherStyles);
+          setDynamicImageSize();
+          updateTextContent();
 
+        }
+        else{
+          const lastElement = slider.lastElementChild;
+          slider.removeChild(lastElement);
+          slider.insertBefore(lastElement, slider.firstElementChild);
+          applyStylesToElements(styles, otherStyles);
+          setDynamicImageSize();
+          updateTextContent();
 
-function moveRight() {
-  const slider = document.getElementById("slider");
-  const lastElement = slider.lastElementChild;
-  const secondLastElement = lastElement.previousElementSibling;
-  if (tempVal == 0) {
-    slider.removeChild(secondLastElement);
-    slider.insertBefore(secondLastElement, slider.firstElementChild);
-    tempVal = tempVal + 1;
-    applyStylesToElements(styles, otherStyles);
-    setDynamicImageSize();
-    updateTextContent();
-
-  }
-  else{
-    const lastElement = slider.lastElementChild;
-    slider.removeChild(lastElement);
-    slider.insertBefore(lastElement, slider.firstElementChild);
-    applyStylesToElements(styles, otherStyles);
-    setDynamicImageSize();
-    updateTextContent();
-
-  }
-}
+        }
+      }
 
 
     </script>
