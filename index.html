@@ -239,15 +239,16 @@
       const diffX = x - startX;
 
       if (diffX > 50) {
-        moveRight(); // Adjust the threshold (50) as needed
-        startX = x;
+        moveRight();
+        isMouseDown = false; // Stop further movement until the mouse is pressed again
       } else if (diffX < -50) {
-        moveLeft(); // Adjust the threshold (-50) as needed
-        startX = x;
+        moveLeft();
+        isMouseDown = false; // Stop further movement until the mouse is pressed again
       }
     });
   });
 });
+
 
 
 
