@@ -92,30 +92,35 @@ const divSizes = {
     divHeight: '359px',
     imageWidth: '136px',
     imageHeight: '312px',
+    imageLeft: '67px',
   },
   footballerwrapper: {
     divWidth: '340px',
     divHeight: '452px',
     imageWidth: '146px',
     imageHeight: '378px',
+    imageLeft: '95px',
   },
   overlapgroup: {
     divWidth: '377px',
     divHeight: '501px',
     imageWidth: '210px',
     imageHeight: '422px',
+    imageLeft: '85px',
   },
   skierwrapper: {
     divWidth: '470px',
     divHeight: '452px',
     imageWidth: '191px',
     imageHeight: '392px',
+    imageLeft: '74px',
   },
   tanisplayerwrapper: {
     divWidth: '270px',
     divHeight: '359px',
     imageWidth: '205px',
     imageHeight: '301px',
+    imageLeft: '32px',
   },
 };
 
@@ -184,11 +189,14 @@ function setDynamicImageSize() {
     const containerHeight = parseFloat(container.divHeight);
     const imageWidth = parseFloat(container.imageWidth);
     const imageHeight = parseFloat(container.imageHeight);
+    const imageLeft = parseFloat(container.imageLeft);
 
     const newDivWidth = div.getBoundingClientRect().width;
 
     const aspectRatioWidth = newDivWidth / containerWidth;
     let newImageWidth = imageWidth * aspectRatioWidth;
+    let newImageLeft = aspectRatioWidth * imageLeft;
+    console.log("image left",newImageLeft);
 
     const newDivHeight = div.getBoundingClientRect().height;
     const aspectRatioHeight = newDivHeight / containerHeight;
@@ -200,6 +208,7 @@ function setDynamicImageSize() {
     const image = div.querySelector('img');
     image.style.width = `${newImageWidth}px`;
     image.style.height = `${newImageHeight}px`;
+    image.style.left = `${newImageLeft}px`;
   });
   
 }
@@ -255,6 +264,15 @@ function applyStylesToElements(stylesObj, otherStylesObj) {
       });
     }
   });
+  if (elements[2]) {
+    // Get the image element within the slider-div at index 2
+    const image = elements[2].querySelector('img');
+
+    // Change the left property of the image
+    if (image) {
+      image.style.left = '75px'; // Set your desired value for the left property
+    }
+  }
 }
 
 function moveLeft() {

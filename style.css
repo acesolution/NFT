@@ -230,11 +230,8 @@
   object-fit: cover;
 }
 
-
 .slider-div {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  transition: left 0.3s ease-in-out ;
 }
 
 
