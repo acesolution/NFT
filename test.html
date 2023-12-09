@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* Styles for the slider */
+      .desktop {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+      }
+
+      .overlap-wrapper {
+        background-color: #ffffff;
+        width: 1440px; /* Adjust this width based on your content */
+        height: 501px; /* Adjust this height based on your content */
+        overflow: hidden; /* Ensure the content is hidden if it overflows */
+        position: relative;
+      }
+
+      .overlap {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .slide {
+        flex: 0 0 auto;
+        width: 377px; /* Adjust this width based on your content */
+        height: 501px; /* Adjust this height based on your content */
+        border-radius: 20px; /* Optional: Add border-radius */
+        margin-right: 20px; /* Adjust the margin between slides */
+        overflow: hidden; /* Ensure content is not visible outside the slide */
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="overlap-wrapper">
+        <div class="overlap" id="slider">
+          <div class="slide">
+            <img class="grand-ma" src="img/grandma1.png" />
+          </div>
+          <div class="slide">
+            <img class="hiker" src="img/hiker_1.png" />
+          </div>
+          <div class="slide">
+            <img class="footballer" src="img/footballer.png" />
+          </div>
+          <!-- Clone the first and last images to create a loop -->
+          <div class="slide">
+            <img class="grand-ma" src="img/grandma1.png" />
+          </div>
+          <div class="slide">
+            <img class="hiker" src="img/hiker_1.png" />
+          </div>
+        </div>
+      </div>
+      <button onclick="moveLeft()">Previous</button>
+      <button onclick="moveRight()">Next</button>
+    </div>
+
+    <script>
+      const slider = document.getElementById("slider");
+      const slides = slider.querySelectorAll(".slide");
+      let currentIndex = 0;
+
+      function moveLeft() {
+        currentIndex--;
+        if (currentIndex < 0) {
+          currentIndex = slides.length - 3;
+          slider.style.transition = "none";
+          slider.style.transform = `translateX(-${(slides[0].offsetWidth + 20) * (slides.length - 2)}px)`; // 20 is the margin-right value
+          setTimeout(() => {
+            slider.style.transition = "transform 0.3s ease-in-out";
+            currentIndex = slides.length - 4;
+            updateSlider();
+          }, 50);
+        } else {
+          updateSlider();
+        }
+      }
+
+      function moveRight() {
+        currentIndex++;
+        if (currentIndex > slides.length - 3) {
+          slider.style.transition = "none";
+          slider.style.transform = `translateX(0px)`;
+          setTimeout(() => {
+            slider.style.transition = "transform 0.3s ease-in-out";
+            currentIndex = 1;
+            updateSlider();
+          }, 50);
+        } else {
+          updateSlider();
+        }
+      }
+
+      function updateSlider() {
+        const newPosition = -currentIndex * (slides[0].offsetWidth + 20); // 20 is the margin-right value
+        slider.style.transform = `translateX(${newPosition}px)`;
+      }
+    </script>
+  </body>
+</html>
