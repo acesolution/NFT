@@ -239,10 +239,10 @@
       const diffX = x - startX;
 
       if (diffX > 50) {
-        moveRight();
+        moveLeft();
         isMouseDown = false; // Stop further movement until the mouse is pressed again
       } else if (diffX < -50) {
-        moveLeft();
+        moveRight();
         isMouseDown = false; // Stop further movement until the mouse is pressed again
       }
     });
